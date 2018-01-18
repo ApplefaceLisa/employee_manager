@@ -1,0 +1,81 @@
+<!-- add new employee -->
+<div id="new" ng-controller="newController">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Add New Employee</h1>
+      <p class="lead">this is new.html</p>
+    </div>
+  </div>
+  <form>
+    <div class="form-group row">
+      <img ng-src="{{employee.imageUrl}}" class="col-2 img-thumbnail" />
+      <label for="avatar" class="col-2 col-form-label">Upload Avatar</label>
+      <div class="col-4">
+        <input type="file" class="form-control-file" id="avatar" file-model = "imgFile">
+      </div>
+      <div class="col-4">
+        <button ng-click = "uploadFile()">Upload File</button>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="name" class="col-2 col-form-label">Name</label>
+      <div class="col-10">
+        <input type="text" class="form-control" id="name" ng-model="employee.name" placeholder="firstname lastname">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="title" class="col-2 col-form-label">Title</label>
+      <div class="col-10">
+        <input type="text" class="form-control" id="title" ng-model="employee.title" placeholder="title">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="gender" class="col-2 col-form-label">Gender</label>
+      <div class="col-10">
+        <select class="form-control" id="gender" ng-model="employee.gender">
+          <option value="female">female</option>
+          <option value="male">male</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="start-date" class="col-2 col-form-label">Start Date</label>
+      <div class="col-10">
+        <input class="form-control" type="date" id="start-date" ng-model="startDate">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="office-phone" class="col-2 col-form-label">Office Phone</label>
+      <div class="col-10">
+        <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="office-phone" ng-model="employee.phone">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="cell-phone" class="col-2 col-form-label">Cell Phone</label>
+      <div class="col-10">
+        <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="cell-phone" ng-model="employee.cell">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="sms" class="col-2 col-form-label">SMS</label>
+      <div class="col-10">
+        <input class="form-control" type="tel" placeholder="1-(555)-555-5555" id="sms" ng-model="employee.sms">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="email" class="col-sm-2">Email</label>
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" placeholder="name@example.com" ng-model="employee.email">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="manager" class="col-sm-2">Manager</label>
+      <div class="col-sm-10">
+        <select id="manager" ng-model="employee.manager_id"
+          ng-options = "manager.id as manager.name for manager in managers"></select>
+      </div>
+    </div>
+  </form>
+  <button class="btn btn-success" ng-click="save($event)">Save</button>
+  <button class="btn btn-secondary" ng-click="cancel($event)">Cancel</button>
+</div>

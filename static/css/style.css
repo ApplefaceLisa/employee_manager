@@ -1,0 +1,7 @@
+#list td img, #new form img, #edit form img, #reports td img {
+  display: block;
+  max-width:80px;
+  max-height:80px;
+  width: auto;
+  height: auto;
+}

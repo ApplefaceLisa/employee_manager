@@ -1,0 +1,29 @@
+{
+  "name": "employee_manage_system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "AngularJS",
+    "NodeJS",
+    "ExpressJS",
+    "mySQL"
+  ],
+  "author": "Lisa Li",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "multer": "^1.3.0",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.4.5"
+  }
+}

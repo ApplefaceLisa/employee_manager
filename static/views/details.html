@@ -1,0 +1,32 @@
+<!-- Employee Details -->
+<div id="details" ng-controller="detailsController">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Employee Details</h1>
+      <p class="lead">this is details.html</p>
+    </div>
+  </div>
+  <div class="row" ng-if="dataReady">
+    <div class="col-1"><img class="card-img-top" ng-src="{{employee.imageUrl}}" alt="default avatar"></div>
+    <div class="col-11"></div>
+    <p class="col-10">Name : {{employee.name}}</p>
+    <p class="col-10">Title : {{employee.title}}</p>
+    <p class="col-10">Gender : {{employee.gender}}</p>
+    <p class="col-10">Date Of Start : {{employee.startDate}}</p>
+    <p class="col-10">Office Phone : {{employee.phone}}</p>
+    <p class="col-10">Cell Phone : {{employee.cell}}</p>
+    <p class="col-10">SMS : {{employee.sms}}</p>
+    <p class="col-10">Email : {{employee.email}}</p>
+    <p class="col-10">
+      <a ng-href="#!/details/{{employee.manager_id}}">Manager : {{employee.manager_name}}</a>
+    </p>
+    <p class="col-10">
+      <a ng-href="#!/reports/{{employee.id}}">Numer of Direct Reports : {{employee.reports}}</a>
+    <p class="col-10">Title : Manager</p>
+    <p class="col-10">Email : mary@gmail.com</p>
+    <p class="col-10">
+      <a ng-href="#!/edit/{{employee.id}}" class="btn btn-success">Edit</a>
+      <a ng-href="#!/" class="btn btn-secondary">home</a>
+    </p>
+  </div>
+</div>

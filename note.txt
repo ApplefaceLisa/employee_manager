@@ -1,0 +1,4 @@
+mySQL Date type format : yyyy-mm-dd
+
+AngularJS dateFilter : format = 'yyyy-MM-dd', var date = dateFilter(new Date(), format);
+https://docs.angularjs.org/api/ng/filter/date

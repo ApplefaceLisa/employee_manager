@@ -1,0 +1,64 @@
+<!-- show all employees detail, manager name and number of direct reports in table -->
+<div id="list" ng-controller="listController">
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Employee Directory</h1>
+      <p class="lead">this is list.html</p>
+    </div>
+  </div>
+  <table class="table table-striped table-bordered table-hover table-responsive" ng-if="dataReady">
+    <thead>
+      <tr>
+        <th scope="col">Picture</th>
+        <th scope="col">Name</th>
+        <th scope="col">Title</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Start Date</th>
+        <th scope="col">Office Phone</th>
+        <th scope="col">Cell Phone</th>
+        <th scope="col">SMS</th>
+        <th scope="col">Email</th>
+        <th scope="col">Manager</th>
+        <th scope="col">Number of Direct Reports</th>
+        <th scope="col">Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="employee in employees">
+        <td><img ng-src="{{ employee.imageUrl }}" /></td>
+        <td><a ng-href="#!/details/{{employee.id}}">{{ employee.name }}</a></td>
+        <td>{{ employee.title }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>{{ employee.startDate | date : 'yyyy-MM-dd' }}</td>
+        <td><a ng-href="tel:employee.phone">{{ employee.phone }}</a></td>
+        <td><a ng-href="tel:employee.cell">{{ employee.cell }}</a></td>
+        <td><a ng-href="sms:{{employee.sms}}">{{ employee.sms }}</a></td>
+        <td><a ng-href="mailto:{{employee.email}}" target="_blank">{{ employee.email }}</a></td>
+        <td><a ng-href="#!/details/{{employee.manager_id}}">{{ employee.manager_name }}</a></td>
+        <td><a ng-href="#!/reports/{{employee.id}}">{{ employee.reports }}</a></td>
+        <td>
+          <button class="btn" ng-click="edit($event, employee.id)">&#9998;</button>
+          <button class="btn" ng-click="delete($event, employee.id)">&#10006;</button>
+        </td>
+      </tr>
+      <!--tr>
+        <td><img ng-src="image/default.png" /></td>
+        <td><a ng-href="#!/details/2">Test User</a></td>
+        <td>TT</td>
+        <td>male</td>
+        <td></td>
+        <td><a ng-href="tel:+14082969718">Office Phone</a></td>
+        <td><a ng-href="tel:+14082969718">Cell Phone</a></td>
+        <td><a ng-href="sms:+14082969718">SMS</a></td>
+        <td><a ng-href="mailto:applefacelisa@gmail.com" target="_blank">Email</a></td>
+        <td><a ng-href="#!/details/1">NULL</a></td>
+        <td><a ng-href="#!/reports/2">0</a></td>
+        <td>
+          <button class="btn" ng-click="edit($event, employee.id)">&#9998;</button>
+          <button class="btn" ng-click="delete($event, employee.id)">&#10006;</button>
+        </td>
+      </tr-->
+    </tbody>
+  </table>
+  <button class="btn btn-success" ng-click="create($event)">Add New Employee</button>
+</div>
